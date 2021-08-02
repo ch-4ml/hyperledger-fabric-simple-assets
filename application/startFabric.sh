@@ -24,6 +24,7 @@ fi
 
 # clean the keystore
 rm -rf ./hfc-key-store
+rm -rf ./wallet
 
 # launch network; create channel and join peer to channel
 cd ../basic-network
