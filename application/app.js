@@ -13,6 +13,9 @@ app.get("/", (req, res) =>{
     res.render("index");
 });
 
+app.use(express.urlencoded({extended: true}));
+app.use(express.json()) // To parse the incoming requests with JSON payloads
+
 app.use("/assets", assetsRouter);
 
 app.listen(port, () => {

@@ -6,15 +6,15 @@
 <body>
     <h1 onclick="">키 조회 페이지</h1>
     <div>키 이름: <input id="key" type="text"></div>
-    <button id="submit">조회</button>
+    <button id="query">조회</button>
     <p id="keyResult"></p>
 
     <script>
       const txtKey = document.getElementById("key");
-      const btnSubmit = document.getElementById("submit");
+      const btnQuery = document.getElementById("query");
       const keyResult = document.getElementById("keyResult");
 
-      btnSubmit.addEventListener("click", async () => {
+      btnQuery.addEventListener("click", async () => {
         const key = txtKey.value;
         const result = await fetch(`/assets/${key}`);
         const json = await result.json();
