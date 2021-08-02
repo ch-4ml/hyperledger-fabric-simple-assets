@@ -1,0 +1,1 @@
+# hyperledger-fabric-simple-assets
