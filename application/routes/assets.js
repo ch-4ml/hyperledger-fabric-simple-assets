@@ -40,7 +40,7 @@ router.get('/:key', async (req, res) => {
 
     const network = await gateway.getNetwork('mychannel');
 
-    const contract = network.getContract('sacc');
+    const contract = network.getContract('myfirstcc');
     
     const result = await contract.evaluateTransaction('get', key);
 
@@ -74,7 +74,7 @@ router.post('/new', async (req, res) => {
 
     const network = await gateway.getNetwork('mychannel');
 
-    const contract = network.getContract('sacc');
+    const contract = network.getContract('myfirstcc');
     
     const result = await contract.submitTransaction('set', key, value);
 

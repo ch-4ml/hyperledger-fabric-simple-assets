@@ -26,6 +26,8 @@
           headers: { 'Content-Type': 'application/json' }
         });
 
+        console.log(result);
+
         if (result.ok) pResult.innerHTML = "Transaction has been submitted.";
         else "Error!!!!!!!!!"
       });
