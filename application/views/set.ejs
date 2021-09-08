@@ -4,6 +4,32 @@
     <title>Simple Assets - Set</title>
 </head>
 <body>
-    
+    <h1>키 생성 페이지</h1>
+    <div>키 이름: <input id="key" type="text"></div>
+    <div>키 값: <input id="value" type="text"></div>
+    <button id="submit">생성</button>
+    <p id="result"></p>
+
+    <script>
+      const txtKey = document.getElementById("key");
+      const txtValue = document.getElementById("value");
+      const btnSubmit = document.getElementById("submit");
+      const pResult = document.getElementById("result");
+
+      btnSubmit.addEventListener("click", async () => {
+        const key = txtKey.value;
+        const value = txtValue.value;
+
+        const result = await fetch('/assets/new', {
+          method: "POST",
+          body: JSON.stringify({ key, value }),
+          headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (result.ok) pResult.innerHTML = "Transaction has been submitted.";
+        else "Error!!!!!!!!!"
+      });
+    </script>
 </body>
 </html>
+
